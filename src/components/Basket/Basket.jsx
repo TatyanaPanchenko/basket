@@ -3,24 +3,40 @@ import style from "./basket.module.scss";
 import createUniqueID from "../../createUniqueID";
 
 export default function Basket(props) {
-  console.log(props.data.price);
-  const [count, setCount] = useState([10, 4, 13]);
-  const newCount = [...count];
-  console.log(newCount);
-  const countSum = newCount.reduce((acc, el) => acc + el, 0);
-  const [total, getTotal] = useState(countSum);
+  console.log(props.data);
 
+  const [count, setCount] = useState([1, 1, 1]);
+  const [total, setTotal] = useState(3);
+  console.log(count);
   function decreaseCount(index) {
-    const countItem = [...count];
-    setCount(countItem[index] - 1);
+    const newCount = [...count];
+    if (newCount[index] > 0) {
+      newCount[index] = newCount[index] - 1;
+      const countSum = newCount.reduce((acc, el) => acc + el, 0);
+      setCount(newCount);
+      setTotal(countSum);
+    } else return;
   }
-  // function increaseCount(index) {
-  //   setCount([...(count[index] + 1)]);
-  // }
-  const getTotalPrice = (quantity, price) => {
-    return quantity * price;
+  function increaseCount(index) {
+    const newCount = [...count];
+    newCount[index] = newCount[index] + 1;
+    const countSum = newCount.reduce((acc, el) => acc + el, 0);
+    setCount(newCount);
+    setTotal(countSum);
+  }
+  const getTotalPrice = (count, data) => {
+    const newArr = [];
+    count.forEach((itemCount, indexCount) => {
+      data.forEach((itemPrice, indexPrice) => {
+        if (indexCount == indexPrice) {
+          const sum = itemCount * Number(itemPrice.price);
+          newArr.push(sum);
+        }
+      });
+    });
+    return newArr.reduce((acc, item) => acc + item);
   };
-  console.log(getTotalPrice());
+  console.log(getTotalPrice(count, props.data));
   return (
     <div className={style.basket}>
       <div className={style["basket-wrapper"]}>
@@ -33,10 +49,6 @@ export default function Basket(props) {
         <div className={style["basket-inner"]}>
           <div className={style["basket-items"]}>
             {props.data.map((item, index) => {
-              const itemSum = getTotalPrice(count[index], item.price);
-              console.log(index);
-              // let sum += itemSum;
-              console.log(itemSum);
               return (
                 <div className={style["basket-item"]} key={createUniqueID()}>
                   <div className={style["item-about"]} key={createUniqueID()}>
@@ -94,7 +106,9 @@ export default function Basket(props) {
         <div className={style["basket-bottom"]}>
           <div className={style["basket-total"]}>
             <span>Итого</span>
-            <div className={style["basket-totalPrice"]}>{getTotalPrice()}₽</div>
+            <div className={style["basket-totalPrice"]}>
+              {getTotalPrice(count, props.data)}₽
+            </div>
           </div>
 
           <button className={style["basket-order"]}>Оформить заказ</button>
