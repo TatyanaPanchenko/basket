@@ -3,11 +3,9 @@ import style from "./basket.module.scss";
 import createUniqueID from "../../createUniqueID";
 
 export default function Basket(props) {
-  console.log(props.data);
-
   const [count, setCount] = useState([1, 1, 1]);
   const [total, setTotal] = useState(3);
-  console.log(count);
+
   function decreaseCount(index) {
     const newCount = [...count];
     if (newCount[index] > 0) {
@@ -36,7 +34,6 @@ export default function Basket(props) {
     });
     return newArr.reduce((acc, item) => acc + item);
   };
-  console.log(getTotalPrice(count, props.data));
   return (
     <div className={style.basket}>
       <div className={style["basket-wrapper"]}>
