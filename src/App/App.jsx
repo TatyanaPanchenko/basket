@@ -1,4 +1,4 @@
-import Basket from "../Basket/Basket";
+import Basket from "../components/Basket/Basket";
 import data from "../data/data.json";
 
 import "./app.module.scss";
