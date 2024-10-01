@@ -1,28 +1,28 @@
-.basket {
-  .basket-wrapper {
+.cart {
+  .cart-wrapper {
     max-width: 400px;
     padding: 30px;
-    .basket-top {
+    .cart-top {
       border-bottom: 1px solid #eee;
       display: flex;
       justify-content: space-between;
       padding-bottom: 15px;
       margin-bottom: 25px;
-      .basket-title {
+      .cart-title {
         font-size: 30px;
         font-weight: 600;
       }
-      .basket-totalCount {
+      .cart-totalCount {
         padding: 5px 25px;
         background-color: #eee;
         border-radius: 10px;
         align-self: center;
       }
     }
-    .basket-inner {
+    .cart-inner {
       border-bottom: 1px solid #eee;
-      .basket-items {
-        .basket-item {
+      .cart-items {
+        .cart-item {
           margin-bottom: 20px;
           display: flex;
           justify-content: space-between;
@@ -70,19 +70,19 @@
         }
       }
     }
-    .basket-bottom {
-      .basket-total {
+    .cart-bottom {
+      .cart-total {
         padding-top: 15px;
         margin-bottom: 20px;
         font-size: 20px;
         font-weight: 600;
         display: flex;
         justify-content: space-between;
-        .basket-totalPrice {
+        .cart-totalPrice {
           font-weight: 600;
         }
       }
-      .basket-order {
+      .cart-order {
         color: #fff;
         background-color: #fc8f29;
         border: none;

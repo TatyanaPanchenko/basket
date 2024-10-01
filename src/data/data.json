@@ -1,20 +1,23 @@
 [
   {
-    "img": "src/assets/burger.jpg",
+    "img": "src/assets/cart/burger.jpg",
     "name": "Супер сырный",
     "weight": "512г",
-    "price": "550"
+    "price": "550",
+    "count": "1"
   },
   {
-    "img": "src/assets/french-fries.jpg",
+    "img": "src/assets/cart/french-fries.jpg",
     "name": "Картошка фри",
     "weight": "180г",
-    "price": "245"
+    "price": "245",
+    "count": "2"
   },
   {
-    "img": "src/assets/hot-dog.jpg",
+    "img": "src/assets/cart/hot-dog.jpg",
     "name": "Жгучий хот-дог",
     "weight": "245г",
-    "price": "239"
+    "price": "239",
+    "count": "3"
   }
 ]

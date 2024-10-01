@@ -1,12 +1,16 @@
-import Basket from "../components/Basket/Basket";
-import data from "../data/data.json";
-
+import Header from "../components/Header/Header";
+import Firstscreen from "../components/Firstscreen/Firstscreen";
+import Main from "../components/Main/Main";
+import Footer from "../components/Footer/Footer";
 import "./app.module.scss";
 
 function App() {
   return (
     <>
-      <Basket data={data} />
+      <Header />
+      <Firstscreen />
+      <Main />
+      <Footer />
     </>
   );
 }

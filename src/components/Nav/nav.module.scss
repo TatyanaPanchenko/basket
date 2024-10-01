@@ -1,0 +1,16 @@
+.nav {
+  .nav-items {
+    display: flex;
+    column-gap: 50px;
+    justify-content: center;
+    .nav-item {
+      .nav-img {
+        img {
+          width: 100%;
+        }
+      }
+      .item-name {
+      }
+    }
+  }
+}
